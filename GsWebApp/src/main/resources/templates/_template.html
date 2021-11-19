@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:fragment="head">
+	<meta charset="UTF-8">
+	<title>Light & Healthy</title>
+	<link rel="stylesheet" type="text/css" th:href="@{~/css/global.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{~/css/form.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{~/css/menu.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{~/css/healthy.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{~/css/users.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{~/css/home.css}">
+</head>
+<body>
+
+<h1 th:fragment="home">
+	<a href="/">
+		Healthy and Light
+	</a>
+</h1>
+
+<nav th:fragment="menu(page)">
+	<ul class="menu">
+		<li>
+			<a href="/healthy" th:classappend="${page=='healthy'}?active">
+				<span class="material-icons">
+					check_circle
+				</span>
+				<span th:text="#{menu.healthy}"></span>
+			</a>
+		</li>
+		<li>
+			<a href="/users" th:classappend="${page=='user'}?active">
+				<span class="material-icons">
+					perm_identity
+				</span>
+				<span th:text="#{menu.user}"></span>
+			</a>
+		</li>
+	</ul>
+</nav>
+
+</body>
+</html>
